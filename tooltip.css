@@ -1,0 +1,42 @@
+:root {
+    --v-tooltip-left: 50%;
+    --v-tooltip-top: 0%;
+    --v-tooltip-translate3d: translate3d(-50%, -110%, 0);
+    --v-tooltip-width: max-content;
+    --v-tooltip-background-color: #000000;
+    --v-tooltip-color: #ffffff;
+    --v-tooltip-border-radius: 0.4rem;
+    --v-tooltip-padding: 0.6em;
+    --v-tooltip-font-size: 0.8rem;
+    --v-tooltip-transition-duration: 0.25s;
+    --v-tooltip-transition-delay: 0s;
+    --v-tooltip-transition-timing-function: ease;
+}
+.data-v-tooltip {
+    position: relative;
+}
+.data-v-tooltip::after {
+    z-index: 2147483647;
+    content: attr(data-v-tooltip);
+    position: absolute;
+    left: var(--v-tooltip-left);
+    top: var(--v-tooltip-top);
+    transform: var(--v-tooltip-translate3d);
+    width: var(--v-tooltip-width);
+    background-color: var(--v-tooltip-background-color);
+    color: var(--v-tooltip-color);
+    border-radius: var(--v-tooltip-border-radius);
+    padding: var(--v-tooltip-padding);
+    font-size: var(--v-tooltip-font-size);
+    transition-property: all;
+    transition-duration: var(--v-tooltip-transition-duration);
+    transition-delay: var(--v-tooltip-transition-delay);
+    transition-timing-function: var(--v-tooltip-transition-timing-function);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+.data-v-tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
