@@ -84,9 +84,13 @@ export default {
     // hooks
     beforeMount(el, { value, dir }) {
         // v-tooltips with global prop won't show the tooltip
-        if (!value.global) {
+        // also object notation without text prop won't show neither
+        if (typeof value === "object" && !value.global && value.text) {
+            el.classList.add("data-v-tooltip");
+        } else if (typeof value === "string") {
             el.classList.add("data-v-tooltip");
         }
+
         // to use functions in Vue's directives which are inside this object, we can't use this, we have to use dir, which is the directive object
         dir.updateTooltip(el, value);
     },
