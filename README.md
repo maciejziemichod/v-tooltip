@@ -163,6 +163,6 @@ This will affect every tooltip in the app, because it changes the CSS variables 
         -   font-size - default `0.8rem`
         -   border - default `none`
         -   transition-duration - default `0.25s`
-        -   transition-delay - default `0s`
+        -   transition-delay - default `0.3s`
         -   transition-timing-function - default `ease`
     -   global - when added, tooltip won't be shown on this element. Instead it modifies CSS variables in the `:root`, therefore changing theme for all of the tooltips on the page

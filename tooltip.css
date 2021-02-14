@@ -10,7 +10,7 @@
     --v-tooltip-font-size: 0.8rem;
     --v-tooltip-border: none;
     --v-tooltip-transition-duration: 0.25s;
-    --v-tooltip-transition-delay: 0s;
+    --v-tooltip-transition-delay: 0.3s;
     --v-tooltip-transition-timing-function: ease;
 }
 .data-v-tooltip {
@@ -32,13 +32,16 @@
     border: var(--v-tooltip-border);
     transition-property: all;
     transition-duration: var(--v-tooltip-transition-duration);
-    transition-delay: var(--v-tooltip-transition-delay);
+    transition-delay: 0s;
     transition-timing-function: var(--v-tooltip-transition-timing-function);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 }
 .data-v-tooltip:hover::after {
+    transition-duration: var(--v-tooltip-transition-duration);
+    transition-delay: var(--v-tooltip-transition-delay);
+    transition-timing-function: var(--v-tooltip-transition-timing-function);
     opacity: 1;
     visibility: visible;
 }
