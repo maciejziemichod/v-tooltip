@@ -46,7 +46,7 @@ Using `v-tooltip` is really simple. Just like any other directive you add it to 
 
 You just provide a string to the `v-tooltip` and it does its magic to create your own reactive tooltip. On hover it will look like that:
 
-![basic usage](basic-usage.png)
+![basic usage](./images/basic-usage.png)
 
 #### String notation
 
@@ -80,7 +80,7 @@ export default {
 
 Result after clicking 4 times:
 
-![auto update](auto-update.png)
+![auto update](./images/auto-update.png)
 
 #### Object notation
 
@@ -104,7 +104,7 @@ Object notation gives many more possibilities. If you want to have tooltips whic
 </template>
 ```
 
-![fancy tooltip](fancy-tooltip.png)
+![fancy tooltip](./images/fancy-tooltip.png)
 
 **Worth noting**: `text` property is optional, so you can do some tricky stuff, like adding only v-tooltip `theme` to some `<div>` and every tooltip inside that `<div>` will inherit that theme instead of the default one.
 
@@ -144,7 +144,7 @@ You can also don't touch the `tooltip.css` and do the same thing using `v-toolti
 
 This will affect every tooltip in the app, because it changes the CSS variables in the `:root`. You can place it wherever you want, I suggest adding it to the top element in the app, using it as semi-"layout" component.
 
-![global prop](global-prop.png)
+![global prop](./images/global-prop.png)
 
 ### API reference
 
