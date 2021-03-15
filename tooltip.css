@@ -1,6 +1,8 @@
 :root {
     --v-tooltip-left: 50%;
     --v-tooltip-top: 0%;
+    --v-tooltip-left-offset: 0px;
+    --v-tooltip-top-offset: 0px;
     --v-tooltip-translate3d: translate3d(-50%, -110%, 0);
     --v-tooltip-width: max-content;
     --v-tooltip-background-color: #000000;
@@ -20,8 +22,8 @@
     z-index: 2147483647;
     content: attr(data-v-tooltip);
     position: absolute;
-    left: var(--v-tooltip-left);
-    top: var(--v-tooltip-top);
+    left: calc(var(--v-tooltip-left) - var(--v-tooltip-left-offset));
+    top: calc(var(--v-tooltip-top) - var(--v-tooltip-top-offset));
     transform: var(--v-tooltip-translate3d);
     width: var(--v-tooltip-width);
     background-color: var(--v-tooltip-background-color);
