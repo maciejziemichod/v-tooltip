@@ -155,6 +155,7 @@ This will affect every tooltip in the app, because it changes the CSS variables 
     -   text - text inside created tooltip
     -   theme - takes care of styling tooltips of the element and its children. Accepted properties:
         -   position - `top (default), bottom, left, right`: placement of the tooltip relative to the element its called on
+        -   offset - `[]` `top, bottom, left, right`: automatically calculate and re-positions the tooltip to prevent overflow from mentioned sides
         -   width - default `max-content`
         -   background-color - default `#000000`
         -   color - default `#ffffff`
