@@ -106,7 +106,7 @@ export default {
         }
     },
     // hooks
-    beforeMount(el, { value, dir }) {
+    mounted(el, { value, dir }) {
         // v-tooltips with global prop won't show the tooltip
         // also object notation without text prop won't show neither
         if (typeof value === "object" && !value.global && value.text) {
