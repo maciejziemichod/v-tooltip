@@ -11,6 +11,7 @@
     --v-tooltip-padding: 0.6em;
     --v-tooltip-font-size: 0.8rem;
     --v-tooltip-border: none;
+    --v-tooltip-box-shadow: none;
     --v-tooltip-transition-duration: 0.25s;
     --v-tooltip-transition-delay: 0.3s;
     --v-tooltip-transition-timing-function: ease;
@@ -32,6 +33,7 @@
     padding: var(--v-tooltip-padding);
     font-size: var(--v-tooltip-font-size);
     border: var(--v-tooltip-border);
+    box-shadow: var(--v-tooltip-box-shadow);
     transition-property: all;
     transition-duration: var(--v-tooltip-transition-duration);
     transition-delay: 0s;
