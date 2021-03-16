@@ -163,6 +163,7 @@ This will affect every tooltip in the app, because it changes the CSS variables 
         -   padding - default `0.6em`
         -   font-size - default `0.8rem`
         -   border - default `none`
+        -   box-shadow - default `none`
         -   transition-duration - default `0.25s`
         -   transition-delay - default `0.3s`
         -   transition-timing-function - default `ease`
