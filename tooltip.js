@@ -25,8 +25,8 @@ export default {
                                     "0%"
                                 );
                                 targetEl.style.setProperty(
-                                    "--v-tooltip-translate3d",
-                                    "translate3d(-50%, -110%, 0)"
+                                    "--v-tooltip-translate",
+                                    "translate(-50%, -110%)"
                                 );
                                 break;
                             case "bottom":
@@ -39,8 +39,8 @@ export default {
                                     "100%"
                                 );
                                 targetEl.style.setProperty(
-                                    "--v-tooltip-translate3d",
-                                    "translate3d(-50%, 10%, 0)"
+                                    "--v-tooltip-translate",
+                                    "translate(-50%, 10%)"
                                 );
                                 break;
                             case "left":
@@ -53,8 +53,8 @@ export default {
                                     "50%"
                                 );
                                 targetEl.style.setProperty(
-                                    "--v-tooltip-translate3d",
-                                    "translate3d(-110%, -50%, 0)"
+                                    "--v-tooltip-translate",
+                                    "translate(-110%, -50%)"
                                 );
                                 break;
                             case "right":
@@ -67,8 +67,8 @@ export default {
                                     "50%"
                                 );
                                 targetEl.style.setProperty(
-                                    "--v-tooltip-translate3d",
-                                    "translate3d(10%, -50%, 0)"
+                                    "--v-tooltip-translate",
+                                    "translate(10%, -50%)"
                                 );
                                 break;
                             default:

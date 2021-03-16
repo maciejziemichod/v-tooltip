@@ -129,7 +129,7 @@ You can also don't touch the `tooltip.css` and do the same thing using `v-toolti
         v-tooltip="{
                     global: true,
                     theme: {
-                        position: 'bottom',
+                        placement: 'bottom',
                         width: 'fit-content',
                         padding: '2rem',
                     },
@@ -154,7 +154,7 @@ This will affect every tooltip in the app, because it changes the CSS variables 
 -   Options (all of them are non-mandatory):
     -   text - text inside created tooltip
     -   theme - takes care of styling tooltips of the element and its children. Accepted properties:
-        -   position - `top (default), bottom, left, right`: placement of the tooltip relative to the element its called on
+        -   placement - `top (default), bottom, left, right`: placement of the tooltip relative to the element its called on
         -   offset - `[]` `top, bottom, left, right`: automatically calculate and re-positions the tooltip to prevent overflow from mentioned sides
         -   width - default `max-content`
         -   background-color - default `#000000`
