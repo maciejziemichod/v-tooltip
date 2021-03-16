@@ -80,22 +80,22 @@ export default {
                                 if (direction === "left") {
                                     targetEl.style.setProperty(
                                         "--v-tooltip-left-offset",
-                                        `-${el.scrollWidth - el.clientWidth}px`
+                                        `-${targetEl.scrollWidth - targetEl.clientWidth}px`
                                     );
                                 } else if (direction === "right") {
                                     targetEl.style.setProperty(
                                         "--v-tooltip-left-offset",
-                                        `${el.scrollWidth - el.clientWidth}px`
+                                        `${targetEl.scrollWidth - targetEl.clientWidth}px`
                                     );
                                 } else if (direction === "top") {
                                     targetEl.style.setProperty(
                                         "--v-tooltip-top-offset",
-                                        `-${el.scrollHeight - el.clientHeight}px`
+                                        `-${targetEl.scrollHeight - targetEl.clientHeight}px`
                                     );
                                 } else if (direction === "bottom") {
                                     targetEl.style.setProperty(
                                         "--v-tooltip-top-offset",
-                                        `${el.scrollHeight - el.clientHeight}px`
+                                        `${targetEl.scrollHeight - targetEl.clientHeight}px`
                                     );
                                 }
                             }
