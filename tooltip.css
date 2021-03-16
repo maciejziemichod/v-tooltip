@@ -2,6 +2,8 @@
     --v-tooltip-left: 50%;
     --v-tooltip-top: 0%;
     --v-tooltip-translate: translate(-50%, -110%);
+    --v-tooltip-left-offset: 0px;
+    --v-tooltip-top-offset: 0px;
     --v-tooltip-width: max-content;
     --v-tooltip-background-color: #000000;
     --v-tooltip-color: #ffffff;
@@ -20,8 +22,8 @@
     z-index: 2147483647;
     content: attr(data-v-tooltip);
     position: absolute;
-    left: var(--v-tooltip-left);
-    top: var(--v-tooltip-top);
+    left: calc(var(--v-tooltip-left) - var(--v-tooltip-left-offset));
+    top: calc(var(--v-tooltip-top) - var(--v-tooltip-top-offset));
     transform: var(--v-tooltip-translate);
     width: var(--v-tooltip-width);
     background-color: var(--v-tooltip-background-color);

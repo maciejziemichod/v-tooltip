@@ -74,6 +74,32 @@ export default {
                             default:
                                 break;
                         }
+                    } else if (key === "offset") {
+                        if (!value.global) {
+                            for (const direction of val) {
+                                if (direction === "left") {
+                                    targetEl.style.setProperty(
+                                        "--v-tooltip-left-offset",
+                                        `-${targetEl.scrollWidth - targetEl.clientWidth}px`
+                                    );
+                                } else if (direction === "right") {
+                                    targetEl.style.setProperty(
+                                        "--v-tooltip-left-offset",
+                                        `${targetEl.scrollWidth - targetEl.clientWidth}px`
+                                    );
+                                } else if (direction === "top") {
+                                    targetEl.style.setProperty(
+                                        "--v-tooltip-top-offset",
+                                        `-${targetEl.scrollHeight - targetEl.clientHeight}px`
+                                    );
+                                } else if (direction === "bottom") {
+                                    targetEl.style.setProperty(
+                                        "--v-tooltip-top-offset",
+                                        `${targetEl.scrollHeight - targetEl.clientHeight}px`
+                                    );
+                                }
+                            }
+                        }
                     } else {
                         targetEl.style.setProperty(`--v-tooltip-${key}`, val);
                     }
@@ -82,7 +108,7 @@ export default {
         }
     },
     // hooks
-    beforeMount(el, { value, dir }) {
+    mounted(el, { value, dir }) {
         // v-tooltips with global prop won't show the tooltip
         // also object notation without text prop won't show neither
         if (typeof value === "object" && !value.global && value.text) {
