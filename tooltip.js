@@ -75,27 +75,29 @@ export default {
                                 break;
                         }
                     } else if (key === "offset") {
-                        for (const direction of val) {
-                            if (direction === "left") {
-                                targetEl.style.setProperty(
-                                    "--v-tooltip-left-offset",
-                                    `-${el.scrollWidth - el.clientWidth}px`
-                                );
-                            } else if (direction === "right") {
-                                targetEl.style.setProperty(
-                                    "--v-tooltip-left-offset",
-                                    `${el.scrollWidth - el.clientWidth}px`
-                                );
-                            } else if (direction === "top") {
-                                targetEl.style.setProperty(
-                                    "--v-tooltip-top-offset",
-                                    `${el.scrollHeight - el.clientHeight}px`
-                                );
-                            } else if (direction === "bottom") {
-                                targetEl.style.setProperty(
-                                    "--v-tooltip-top-offset",
-                                    `-${el.scrollHeight - el.clientHeight}px`
-                                );
+                        if (!value.global) {
+                            for (const direction of val) {
+                                if (direction === "left") {
+                                    targetEl.style.setProperty(
+                                        "--v-tooltip-left-offset",
+                                        `-${el.scrollWidth - el.clientWidth}px`
+                                    );
+                                } else if (direction === "right") {
+                                    targetEl.style.setProperty(
+                                        "--v-tooltip-left-offset",
+                                        `${el.scrollWidth - el.clientWidth}px`
+                                    );
+                                } else if (direction === "top") {
+                                    targetEl.style.setProperty(
+                                        "--v-tooltip-top-offset",
+                                        `-${el.scrollHeight - el.clientHeight}px`
+                                    );
+                                } else if (direction === "bottom") {
+                                    targetEl.style.setProperty(
+                                        "--v-tooltip-top-offset",
+                                        `${el.scrollHeight - el.clientHeight}px`
+                                    );
+                                }
                             }
                         }
                     } else {
