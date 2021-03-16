@@ -4,7 +4,6 @@
     --v-tooltip-translate: translate(-50%, -110%);
     --v-tooltip-left-offset: 0px;
     --v-tooltip-top-offset: 0px;
-    --v-tooltip-translate3d: translate3d(-50%, -110%, 0);
     --v-tooltip-width: max-content;
     --v-tooltip-background-color: #000000;
     --v-tooltip-color: #ffffff;
