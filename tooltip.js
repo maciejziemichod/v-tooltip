@@ -1,14 +1,19 @@
 export default {
-    updateTooltip(el, value) {
+    updateTooltip(el, { value, modifiers }) {
         if (typeof value === "string") {
             // we can pass either a string
             el.setAttribute("data-v-tooltip", value);
+
+            // this check if when v-tooltip receives string with .arrow modifier
+            if (modifiers.arrow) {
+                el.style.setProperty("--v-tooltip-arrow-display", "inline");
+            }
         } else {
             // or an object
             if (value.text) {
                 el.setAttribute("data-v-tooltip", value.text);
             }
-            if (value.displayArrow) {
+            if (value.displayArrow || modifiers.arrow) {
                 // if there is a prop global: true then mutate the :root css variables
                 // otherwise it adds given variables to the element, which makes it possible to be different than others
                 const targetEl = value.global ? document.documentElement : el;
@@ -37,7 +42,7 @@ export default {
                                     "--v-tooltip-translate",
                                     "translate(-50%, -110%)"
                                 );
-                                if (value.displayArrow) {
+                                if (value.displayArrow || modifiers.arrow) {
                                     targetEl.style.setProperty(
                                         "--v-tooltip-arrow-border-color",
                                         "var(--v-tooltip-background-color) transparent transparent transparent"
@@ -61,7 +66,7 @@ export default {
                                     "--v-tooltip-translate",
                                     "translate(-50%, 10%)"
                                 );
-                                if (value.displayArrow) {
+                                if (value.displayArrow || modifiers.arrow) {
                                     targetEl.style.setProperty(
                                         "--v-tooltip-arrow-border-color",
                                         "transparent transparent var(--v-tooltip-background-color) transparent"
@@ -85,7 +90,7 @@ export default {
                                     "--v-tooltip-translate",
                                     "translate(-110%, -50%)"
                                 );
-                                if (value.displayArrow) {
+                                if (value.displayArrow || modifiers.arrow) {
                                     targetEl.style.setProperty(
                                         "--v-tooltip-arrow-border-color",
                                         "transparent transparent transparent var(--v-tooltip-background-color)"
@@ -113,7 +118,7 @@ export default {
                                     "--v-tooltip-translate",
                                     "translate(10%, -50%)"
                                 );
-                                if (value.displayArrow) {
+                                if (value.displayArrow || modifiers.arrow) {
                                     targetEl.style.setProperty(
                                         "--v-tooltip-arrow-border-color",
                                         "transparent var(--v-tooltip-background-color) transparent  transparent"
@@ -175,7 +180,7 @@ export default {
         }
     },
     // hooks
-    mounted(el, { value, dir }) {
+    mounted(el, { value, dir, modifiers }) {
         // v-tooltips with global prop won't show the tooltip
         // also object notation without text prop won't show neither
         if (typeof value === "object" && !value.global && value.text) {
@@ -185,9 +190,9 @@ export default {
         }
 
         // to use functions in Vue's directives which are inside this object, we can't use this, we have to use dir, which is the directive object
-        dir.updateTooltip(el, value);
+        dir.updateTooltip(el, { value, modifiers });
     },
-    updated(el, { value, dir }) {
-        dir.updateTooltip(el, value);
+    updated(el, { value, dir, modifiers }) {
+        dir.updateTooltip(el, { value, modifiers });
     },
 };
