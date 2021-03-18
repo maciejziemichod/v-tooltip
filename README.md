@@ -170,3 +170,5 @@ This will affect every tooltip in the app, because it changes the CSS variables 
     -   global - when added, tooltip won't be shown on this element. Instead it modifies CSS variables in the `:root`, therefore changing theme for all of the tooltips on the page
     -   displayArrow - default `false`. When set to `true` tooltip's arrow pointing towards the element will be displayed. It inherits the tooltip's background color.
         **WARNING**: it is not optimized for `offset` theme property containing more than one direction.
+-   Modifiers:
+    -   arrow - add `.arrow` to tooltip to show the arrow pointing towards the element. It is the same as options' `displayArrow` property. Works with both `string` and `Object` value.
