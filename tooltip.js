@@ -8,6 +8,15 @@ export default {
             if (value.text) {
                 el.setAttribute("data-v-tooltip", value.text);
             }
+            if (value.displayArrow) {
+                // if there is a prop global: true then mutate the :root css variables
+                // otherwise it adds given variables to the element, which makes it possible to be different than others
+                const targetEl = value.global ? document.documentElement : el;
+                targetEl.style.setProperty(
+                    "--v-tooltip-arrow-display",
+                    "inline"
+                );
+            }
             if (value.theme) {
                 // if there is a prop global: true then mutate the :root css variables
                 // otherwise it adds given variables to the element, which makes it possible to be different than others
@@ -28,6 +37,16 @@ export default {
                                     "--v-tooltip-translate",
                                     "translate(-50%, -110%)"
                                 );
+                                if (value.displayArrow) {
+                                    targetEl.style.setProperty(
+                                        "--v-tooltip-arrow-border-color",
+                                        "var(--v-tooltip-background-color) transparent transparent transparent"
+                                    );
+                                    targetEl.style.setProperty(
+                                        "--v-tooltip-arrow-top",
+                                        "calc(var(--v-tooltip-top) - var(--v-tooltip-top-offset) + 8px)"
+                                    );
+                                }
                                 break;
                             case "bottom":
                                 targetEl.style.setProperty(
@@ -42,6 +61,16 @@ export default {
                                     "--v-tooltip-translate",
                                     "translate(-50%, 10%)"
                                 );
+                                if (value.displayArrow) {
+                                    targetEl.style.setProperty(
+                                        "--v-tooltip-arrow-border-color",
+                                        "transparent transparent var(--v-tooltip-background-color) transparent"
+                                    );
+                                    targetEl.style.setProperty(
+                                        "--v-tooltip-arrow-top",
+                                        "calc(var(--v-tooltip-top) - var(--v-tooltip-top-offset) - 7px)"
+                                    );
+                                }
                                 break;
                             case "left":
                                 targetEl.style.setProperty(
@@ -56,6 +85,20 @@ export default {
                                     "--v-tooltip-translate",
                                     "translate(-110%, -50%)"
                                 );
+                                if (value.displayArrow) {
+                                    targetEl.style.setProperty(
+                                        "--v-tooltip-arrow-border-color",
+                                        "transparent transparent transparent var(--v-tooltip-background-color)"
+                                    );
+                                    targetEl.style.setProperty(
+                                        "--v-tooltip-arrow-top",
+                                        "calc(var(--v-tooltip-top)"
+                                    );
+                                    targetEl.style.setProperty(
+                                        "--v-tooltip-arrow-left",
+                                        "calc( var(--v-tooltip-left) - var(--v-tooltip-left-offset) + 1.5px)"
+                                    );
+                                }
                                 break;
                             case "right":
                                 targetEl.style.setProperty(
@@ -70,6 +113,20 @@ export default {
                                     "--v-tooltip-translate",
                                     "translate(10%, -50%)"
                                 );
+                                if (value.displayArrow) {
+                                    targetEl.style.setProperty(
+                                        "--v-tooltip-arrow-border-color",
+                                        "transparent var(--v-tooltip-background-color) transparent  transparent"
+                                    );
+                                    targetEl.style.setProperty(
+                                        "--v-tooltip-arrow-top",
+                                        "calc(var(--v-tooltip-top)"
+                                    );
+                                    targetEl.style.setProperty(
+                                        "--v-tooltip-arrow-left",
+                                        "calc( var(--v-tooltip-left) - var(--v-tooltip-left-offset) - 2px)"
+                                    );
+                                }
                                 break;
                             default:
                                 break;
